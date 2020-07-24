@@ -1,0 +1,131 @@
+{% extends 'books/base.html' %}
+{% block css %}
+       .search-container {
+    width: 300px;
+    height: 45px;
+    background-color: #253341;
+    border-radius: 30px;
+    display: flex;
+}
+
+.search-container input {
+  width: 100%;
+    font-size: 20px;
+    background-color: transparent;
+    border: 0;
+    color: white;
+}
+
+.search-container .search {
+  flex-grow: 1;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.search-container input:focus{
+  outline: none;
+}
+
+.search i{
+  font-size: 25px;
+    color: white;
+}
+{% endblock %}
+{% block body %}
+{% load static %}
+<div class="container">
+    <div class="form-group" style="margin-top: 10px;">
+        <form action="{% url 'search' %}" method="post"> {% csrf_token %}
+            <div style="width: 100%" class="search-container">
+                <div class="search">
+                    <input required name="search" type="text" id="zip-code-input" placeholder="Search books">
+                    <button type="submit" style="border:0; background: transparent;"><i class="fa fa-search"></i> </button> </a>
+                </div>
+        </form>
+    </div>
+    <br>
+    {% if results %}
+    {% for result in results %}
+    <div class="search-result-book">
+        <div class="card" style="width: 15rem;">
+            <img src='/media/{{result.image}}' class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><span>{{result.book_name}}</span></h5>
+                <p class="card-text">{{result.author}}</p>
+                <a href="#" class="btn btn-primary">Read Now</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <div class="alert alert-info" role="alert">
+        No result, please try to search again!
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+{% block js %}
+</script>
+{% endblock %}
+
+
+  <object data="media/pdf" type="appliction/pdf" width="300" height="200" >
+    <a href="{% static 'media/How_to_Win_Friends__Influence_People__PDFDrive.com_.pdf' %}">test.pdf</a>
+  </object>
+
+
+     <nav style="border-bottom: 1px solid rgba(255, 255, 255, 0.1)" class="navbar navbar-expand navbar-dark bg-dark">
+            <div class="container">
+                <div class="collapse navbar-collapse" id="navbarToggle">
+                    <div class="navbar-nav mr-auto pl-2">
+                        <a class="nav-item nav-link" href="">Home</a>
+                        
+                    </div>
+                    <div class="navbar-nav pr-2">
+                    
+                   <form method='get' action='/books/search/' class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search" id="search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+
+                        <a class="nav-item nav-link" href="">Settings</a>
+                        <a class="nav-item nav-link" href="">Logout</a>
+                      
+                        <a class="nav-item nav-link" href="">Login</a>
+                        <a class="nav-item nav-link" href="">Register</a>
+                      
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">My Awesome Cart</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+               
+                <a class="nav-link" href="{% url 'home' %}">Home<span class="sr-only">(current)</span></a>
+    
+            </li>
+            <a class="nav-link" href="{% url 'blog' %}">Blog<span class="sr-only"></span></a>
+        </ul>
+        <form method='get' action='/books/search/' class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search" id="search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        
+        <a href="{% url 'login' %}"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">login</button></a>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">sign up</button>
+        
+    </div>
+    </div>
+</nav>

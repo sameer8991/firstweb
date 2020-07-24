@@ -1,0 +1,98 @@
+{% extends 'books/base.html' %}
+{% block css %}
+ <style type="text/css">
+ .card * {
+    box-sizing: border-box;
+}
+
+.card body {
+    background: #d8ddf3;
+    padding: 40px;
+    display: -webkit-box;
+    display: flex;
+    justify-content: center;
+    font-family: "Noto Sana";
+    min-height: 100vh;
+    -webkit-box-orient :vertical;
+    -webkit-box-direction:normal;
+    flex-direction: column;
+    -webkit-box-align:center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    min-height: 100vh
+}
+
+.card {
+    text-decoration: none;
+    color: black;
+    max-width: 300px;
+    width: 100%;
+    background: white;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(44, 46, 65, 0.15);
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.card header {
+    padding-bottom: 90%;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    background-image: url(img.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.card .content {
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px 30px 30px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    margin-top: -20px;
+    -webkit-transition: all 0.3s ease-in-out;
+}
+
+.card .content> * {
+    margin-bottom: 20px;
+}
+
+.card .content> *:last-child {
+    margin-bottom: 0;
+}
+
+.card .content h3 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.card:hover {
+    box-shadow: 0 4px 15px rgba(44,46, 65, 0.15);
+}
+
+.card:hover .content {
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+
+</style>
+{% endblock %}
+{% block body %}
+{% load static %}
+<a class="card">
+    <header></header>
+    <div class="content">
+        <h3>A card title</h3>
+        <p>My name is sameer</p>
+    </div>
+    
+</a>
+
+{% endblock %} 

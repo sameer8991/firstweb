@@ -1,0 +1,320 @@
+{% extends 'books/base.html' %}
+{% block css %}
+.container {
+max-width: 1226px;
+}
+element.style {
+    background-color: black;
+}
+.carousel {
+margin-bottom: 4rem;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+bottom: 3rem;
+z-index: 10;
+}
+/* Declare heights because of positioning of img element */
+.carousel-item {
+height: 32rem;
+}
+.carousel-item > img {
+position: absolute;
+top: 0;
+left: 0;
+min-width: 100%;
+height: 12rem;
+height: 26rem;
+}
+.col-md-3 {
+display: inline-block;
+margin-left: -8px;
+max-width:28%
+}
+body .carousel-indicators {
+bottom:78px ;
+}
+body .carousel-control-prev-icon,
+body .carousel-control-next-icon {
+background-color: blue;
+border-radius: 27px;
+}
+.carousel-control-prev,
+.carousel-control-next {
+top: auto;
+bottom: auto;
+padding-top: 215px;
+}
+body .no-padding {
+padding-left: 0,
+padding-right: 1px;
+padding-bottom: 30px;
+}
+body{
+backgroun-color:#ccece7;
+}
+}
+.h4, h4{
+font-size: 1.5rem;
+padding-top: 23px;
+font-style: oblique;
+margin-left: 351px;
+}
+<!--- -->
+.card * {
+box-sizing: border-box;
+}
+.card body {
+background: #d8ddf3;
+padding: 40px;
+display: -webkit-box;
+display: flex;
+justify-content: center;
+font-family: "Noto Sana";
+min-height: 100vh;
+-webkit-box-orient :vertical;
+-webkit-box-direction:normal;
+flex-direction: column;
+-webkit-box-align:center;
+align-items: center;
+-webkit-box-pack: center;
+justify-content: center;
+min-height: 100vh
+}
+.card {
+text-decoration: none;
+color: black;
+max-width: 300px;
+width: 100%;
+background: white;
+position: relative;
+border-radius: 10px;
+box-shadow: 0 1px 3px rgba(44, 46, 65, 0.15);
+-webkit-transition: all 0.3s ease-in-out;
+transition: all 0.3s ease-in-out;
+}
+.card header ,img{
+padding-bottom: 4%;
+position: relative;
+border-radius: 10px;
+overflow: hidden;
+background-image: url(img.jpg);
+background-size: cover;
+background-position: center;
+}
+.card .content {
+left: 0;
+width: 100%;
+background: #fff;
+border-radius: 10px;
+padding: 30px 30px 30px;
+position: relative;
+transition: all 0.3s ease-in-out;
+margin-top: -20px;
+-webkit-transition: all 0.3s ease-in-out;
+}
+.card .content> * {
+margin-bottom: 10px;
+}
+.card .content> *:last-child {
+margin-bottom: 0;
+}
+.card .content h3 {
+font-size: 1.6rem;
+font-weight: bold;
+margin-bottom: 15px;
+}
+.card:hover {
+box-shadow: 0 4px 15px rgba(44,46, 65, 0.15);
+}
+.card:hover .content {
+-webkit-transform: translateY(-50%);
+transform: translateY(-50%);
+}
+div.scroll{
+white-space:nowrap;
+width:100%;
+overflow:hidden;
+text-overflow: ellopsis;
+}
+
+
+#section-counter {
+    position: relative;
+    z-index: 0;
+}
+.img, .blog-img, .user-img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.ftco-no-pb {
+    padding-bottom: 0 !important;
+}
+.ftco-no-pt {
+    padding-top: 0 !important;
+}
+.ftco-section {
+    padding: 7em 0;
+    position: relative;
+}
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+    display: block;
+}
+*, *::before, *::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.ftco-counter .block-18 {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: #1c1a1a;
+    padding: 30px 20px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.ftco-counter .text strong.number {
+    font-weight: 700;
+    font-size: 30px;
+    color: #ffbd39;
+    display: block;
+}
+.ftco-counter .text span {
+    display: block;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+}
+{% endblock %}
+{% block body %}
+{% load static %}
+<div style="background-color: black;">
+<section>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" style="height: 21rem">
+            <div class="carousel-item active">
+                <svg class="bd-placeholder-img" width="100%" height="90%" xmlns="http://www.w3.org/2000/" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                    <rect width="100%" height="80%" fill="#777" /><img src="{% static 'images/bg.jpeg' %}"></svg>
+                <div class="container">
+                    <div class="carousel-caption text-left">
+                        <h1>Example headline.</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                    <rect width="100%" height="100%" fill="#777" /><img src="{% static 'images/bg2.jpeg' %}"></svg>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h2> reaader lives a thousand lives before dies...The man who never reads lievs only one.</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+    <section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
+        <div class="container">
+                <div class="row d-md-flex align-items-center">
+          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text">
+                <strong class="number" data-number="100">0</strong>
+                <span>total Book</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text">
+                <strong class="number" data-number="1200">0</strong>
+                <span>Complete Projects</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text">
+                <strong class="number" data-number="1200">14</strong>
+                <span>Happy Customers</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text">
+                <strong class="number" data-number="100 ">0</strong>
+                <span>Cups of coffee</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+<div class="container">
+    <h2>Newly added</h2>
+    <!--Slideshow starts here -->
+    <div class="row">
+        <div id="demo{{forloop.counter}}" class="col carousel slide my-3" data-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data-target="#demo{{forloop.counter}}" data-slide-to="0" class="active"></li>
+                {% for i in range %}
+                <li data-target="#demo{{forloop.parentloop.counter}}" data-slide-to="{{i}}"></li>
+                {% endfor %}
+            </ul>
+            <div class="container carousel-inner no-padding">
+                <div class="carousel-item active">
+                    <div class="col-md-3 justify-content-center counter-wrap ftco-animate">
+                        <a class="card">
+                            <header><img src='/media/{{i.image}}' style="width: 300px; height: 225px;" /></header>
+                            <div class="content">
+                                <div class="scroll">
+                                    <h3 style="font-size: 20px">{{book.0.book_name}}</h3>
+                                </div>
+                                <p>{{book.0.author}}</p>
+                                <button href="/books/products/{{i.id}}" id="rv{{i.id}}" class="btn btn-primary cart">
+                                    review view</button>
+                                <button href="/media/{{i.pdf}}" target="pdf" class="btn btn-primary" download>pdf</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {% for i in book|slice:"1:" %}
+                <div class="col-md-3">
+                    <a class="card">
+                        <header><img src='/media/{{i.image}}' style="width: 300px; height: 225px;" /></header>
+                        <div class="content">
+                            <div class="scroll">
+                                <h3 style="font-size: 20px">{{i.book_name}}</h3>
+                            </div>
+                            <p>{{i.author}}</p>
+                            <button href="/books/products/{{i.id}}" id="rv{{i.id}}" class="btn btn-primary cart">
+                                review view</button>
+                            <button href="/media/{{i.pdf}}" target="pdf" class="btn btn-primary" download>pdf</button>
+                        </div>
+                    </a>
+                </div>
+                {% if forloop.counter|divisibleby:3 and forloop.counter > 0 and not forloop.last %}
+                <div class="carousel-item">
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
+{% block js %}
+{% endblock %}

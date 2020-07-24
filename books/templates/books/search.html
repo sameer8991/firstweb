@@ -1,0 +1,131 @@
+{% extends 'books/base.html' %}
+{% block css %}
+.carousel-indicators .active {
+background-color: blue;
+}
+body .no-padding{
+padding-left: 0,
+padding-right: 0;
+}
+.card * {
+box-sizing: border-box;
+}
+.card body {
+background: #d8ddf3;
+padding: 40px;
+display: -webkit-box;
+display: flex;
+justify-content: center;
+font-family: "Noto Sana";
+min-height: 100vh;
+-webkit-box-orient :vertical;
+-webkit-box-direction:normal;
+flex-direction: column;
+-webkit-box-align:center;
+align-items: center;
+-webkit-box-pack: center;
+justify-content: center;
+min-height: 100vh
+}
+.card {
+text-decoration: none;
+color: black;
+max-width: 300px;
+width: 100%;
+background: white;
+position: relative;
+border-radius: 10px;
+box-shadow: 0 1px 3px rgba(44, 46, 65, 0.15);
+-webkit-transition: all 0.3s ease-in-out;
+transition: all 0.3s ease-in-out;
+}
+.card header ,img{
+padding-bottom: 4%;
+position: relative;
+border-radius: 10px;
+overflow: hidden;
+background-image: url(img.jpg);
+background-size: cover;
+background-position: center;
+}
+.card .content {
+left: 0;
+width: 100%;
+background: #fff;
+border-radius: 10px;
+padding: 30px 30px 30px;
+position: relative;
+transition: all 0.3s ease-in-out;
+margin-top: -20px;
+-webkit-transition: all 0.3s ease-in-out;
+}
+.card .content> * {
+margin-bottom: 20px;
+}
+.card .content> *:last-child {
+margin-bottom: 0;
+}
+.card .content h3 {
+font-size: 1.6rem;
+font-weight: bold;
+margin-bottom: 15px;
+}
+.card:hover {
+box-shadow: 0 4px 15px rgba(44,46, 65, 0.15);
+}
+.card:hover .content {
+-webkit-transform: translateY(-50%);
+transform: translateY(-50%);
+}
+{% endblock %}
+{% block body %}
+{% load static %}
+<div class="container">
+    <!--Slideshow starts here -->
+    {% for book, range, nSlides in allbooks %}
+    <h5 class="my-4"><b>
+            <pre>{{book.0.category}}</pre></b></h5>
+    <div class="row">
+        <div id="demo{{forloop.counter}}" class="col carousel slide my-3" data-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data-target="#demo{{forloop.counter}}" data-slide-to="0" class="active"></li>
+                {% for i in range %}
+                <li data-target="#demo{{forloop.parentloop.counter}}" data-slide-to="{{i}}"></li>
+                {% endfor %}
+            </ul>
+            <div class="container carousel-inner no-padding">
+                <div class="carousel-item active">
+                    {% for i in book %}
+                    <a class="card">
+                        <header><img src='/media/{{i.image}}' style="width: 300px; height: 225" /></header>
+                        <div class="content">
+                            <h3>{{i.book_name}}</h3>
+                            <p>{{i.author}}</p>
+                        </div>
+                    </a>
+                    {% if forloop.counter|divisibleby:4 and forloop.counter > 0 and not forloop.last %}
+                </div>
+                <div class="carousel-item">
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!-- left and right controls for the slide -->
+        <a class="carousel-control-prev" href="#demo{{forloop.counter}}" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo{{forloop.counter}}" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+{% block js %}
+<script>
+{ % if msg | length != 0 % }
+alert('{{msg}}');
+window.location.href = "/books/" { % endif % }
+</script>
+{% endblock %}

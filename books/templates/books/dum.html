@@ -1,0 +1,418 @@
+  <section>
+        <div id="example" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item-active">
+                    <img src="{% static 'images/bg.jpg' %}" style="width: 100%!important; height: 400px;" class="d-block w-100" alt="..">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'images/bg.jpg' %}" style="width: 100%!important; height: 400px;" class="d-block w-100" alt="..">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'images/bg.jpg' %}" style="width: 100%!important; height: 400px;" class="d-block w-100" alt="..">
+                </div>
+            </div>
+        
+        </div> 
+    </section>
+
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                        <rect width="100%" height="100%" fill="#777" />
+                    <iframe src=""></iframe> </svg>
+                    <div class="container">
+                        <div class="carousel-caption text-left">
+                            <h1>Example headline.</h1>
+                            <p><image width="500" height="350" xlink:herf="" ></p>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                        <rect width="100%" height="100%" fill="#777" /></svg>
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>Another example headline.</h1>
+                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                        <rect width="100%" height="100%" fill="#777" /></svg>
+                    <div class="container">
+                        <div class="carousel-caption text-right">
+                            <h1>One more for good measure.</h1>
+                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+                        </div>
+                    </div>
+                </div>
+        
+        </div>
+
+    .wrap-slick1,
+.wrap-slick2,
+.wrap-slick3 {
+  position: relative;
+}
+
+.item-slick1,
+.item-slick2,
+.item-slick3 {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.item-slick1 {
+  height: 100vh;
+}
+
+.arrow-slick1, .arrow-slick2, .arrow-slick3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  font-size: 18px;
+  color: white;
+  position: absolute;
+  background-color: black;
+  opacity: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  border-radius: 50%;
+  z-index: 200;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.wrap-slick1:hover .arrow-slick1,
+.wrap-slick2:hover .arrow-slick2,
+.wrap-slick3:hover .arrow-slick3 {
+  opacity: 0.5;
+}
+
+.arrow-slick1:hover,
+.arrow-slick2:hover,
+.arrow-slick3:hover {
+  background-color: #ec1d25;
+}
+
+.next-slick1,
+.next-slick2,
+.next-slick3 {
+  right: 50px;
+  left: auto;
+}
+
+.prev-slick1,
+.prev-slick2,
+.prev-slick3 {
+  left: 50px;
+  right: auto;
+}
+
+@media (max-width: 576px) {
+  .next-slick1 {
+    right: 15px;
+  }
+
+  .prev-slick1 {
+    left: 15px;
+  }
+}
+
+/* ------------------------------------ */
+.wrap-slick1-dots {
+  position: absolute;
+  width: 100%;
+  height: 65px;
+  left: 0;
+  bottom: 0;
+}
+
+.slick1-dots {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.slick1-dots li {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.slick1-dots li button {
+  display: block;
+  color: transparent;
+  background-color: #958e88;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+
+.slick1-dots li button:hover {
+    border: 3px solid white;
+    background-color: #d41b22;
+}
+
+.slick1-dots li.slick-active button {
+    border: 3px solid white;
+    background-color: #d41b22;
+} 
+
+/*[ Caption ]
+-----------------------------------------------------------
+*/
+@media (max-width: 768px) {
+  .wrap-content-slide1 .tit1 {
+    font-size: 70px;
+  }
+
+  .wrap-content-slide1 .txt1 {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  .wrap-content-slide1 .tit1 {
+    font-size: 60px;
+  }
+
+  .wrap-content-slide1 .txt1 {
+    font-size: 50px;
+  }
+}
+
+
+/*[ Button1 ]
+///////////////////////////////////////////////////////////
+*/
+.btn1 {
+  background: white;
+  border-radius: 10px;
+}
+
+.btn1:hover {
+  background-color: #ec1d25;
+  color: white;
+}
+
+/*[ Button3 ]
+///////////////////////////////////////////////////////////
+*/
+.btn3 {
+  background: #111111;
+  border-radius: 10px;
+}
+
+.btn3:hover {
+  background-color: #ec1d25;
+  color: white;
+}
+
+
+/*[ Button2 ]
+///////////////////////////////////////////////////////////
+*/
+.btn2 {
+  background-color: white;
+  border-radius: 10px;
+  opacity: 0.9;
+}
+
+.btn2:hover {
+  background-color: #ec1d25;
+  color: white;
+}
+
+
+<section class="section-slide">
+        <div class="wrap-slick1">
+            <div class="slick1">
+                <div class="item-slick1 item1-slick1" style="background-image: url(images/bg.jpg);">
+                    <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
+                        <span class="caption1-slide1 txt1 t-center animated visible-false m-b-15" data-appear="fadeInDown">
+                            Welcome to
+                        </span>
+                        <h2 class="caption2-slide1 tit1 t-center animated visible-false m-b-37" data-appear="fadeInUp">
+                            Pato Place
+                        </h2>
+                        <div class="wrap-btn-slide1 animated visible-false" data-appear="zoomIn">
+                            <!-- Button1 -->
+                            <a href="menu.html" class="btn1 flex-c-m size1 txt3 trans-0-4">
+                                Look Menu
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-slick1 item2-slick1" style="background-image: url(images/bg.jpg);">
+                    <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
+                        <span class="caption1-slide1 txt1 t-center animated visible-false m-b-15" data-appear="rollIn">
+                            Welcome to
+                        </span>
+                        <h2 class="caption2-slide1 tit1 t-center animated visible-false m-b-37" data-appear="lightSpeedIn">
+                            Pato Place
+                        </h2>
+                        <div class="wrap-btn-slide1 animated visible-false" data-appear="slideInUp">
+                            <!-- Button1 -->
+                            <a href="menu.html" class="btn1 flex-c-m size1 txt3 trans-0-4">
+                                Look Menu
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-slick1 item3-slick1" style="background-image: url(images/bg.jpg);">
+                    <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
+                        <span class="caption1-slide1 txt1 t-center animated visible-false m-b-15" data-appear="rotateInDownLeft">
+                            Welcome to
+                        </span>
+                        <h2 class="caption2-slide1 tit1 t-center animated visible-false m-b-37" data-appear="rotateInUpRight">
+                            Pato Place
+                        </h2>
+                        <div class="wrap-btn-slide1 animated visible-false" data-appear="rotateIn">
+                            <!-- Button1 -->
+                            <a href="menu.html" class="btn1 flex-c-m size1 txt3 trans-0-4">
+                                Look Menu
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrap-slick1-dots"></div>
+        </div>
+    </section>
+
+
+    -------------------
+    .carousel {
+  margin-bottom: 4rem;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel-item {
+  height: 32rem;
+}
+.carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 12rem;
+}
+
+
+.search-container {
+width: 300px;
+height: 45px;
+background-color: white;
+border-radius: 30px;
+display: flex;
+border: 1px solid black;
+}
+.search-container input {
+width: 100%;
+font-size: 20px;
+background-color: transparent;
+border: 0;
+color: white;
+}
+.search-container .search {
+flex-grow: 1;
+display: flex;
+align-items: center;
+padding-left: 10px;
+padding-right: 100px;
+}
+.search-container input:focus{
+outline: none;
+}
+.search i{
+font-size: 25px;
+color: white;
+}
+
+
+<div class="search-result-book">
+         <div class="card-body">
+        <div class="card align-items-center" style="width: 18rem; border: 1px solid black;">
+            <h4>{{result.book_name}}</h4>
+            <img src='/media/{{result.image}}' class="card-img-top" alt="...">
+           
+                <h5 class="card-title" id="namepr{{i.id}}">{{result.author}}</h5>
+                <h5 class="card-title">Rs.<span id="pricepr{{i.price}}">{{result.price}}</span></h5>
+                <p class="card-text"></p>
+                <span id="divpr{{i.id}}" class="divpr">
+                <a href="https://www.google.com "><button  id="myButton" class="float-left submit-button" >Buy now</button></span></a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card" style="width: 18rem;" >
+    <img src='/media/{{result.image}}' class="card-img-top" alt="...">
+    <div class="card-body" >
+        <h5 class="card-title"><span>{{result.book_name}}</span></h5>
+         <p class="card-text">{{result.author}}</p>
+         <a href="#" class="btn btn-primary" >Read Now</a>
+    </div>
+</div>
+
+searchView
+def SearchView(request):
+    if request.method == 'POST':
+        kerko = request.POST.get('search')
+        print(kerko)
+        results = Book.objects.filter(book_name=kerko)
+        context = {
+            'results':results
+        }
+        return render(request, 'books/search_result.html', context)
+
+
+
+ <form action="{% url 'search' %}" method="post">{% csrf_token %}
+                                    
+                   <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><svg class="bi bi-search" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd" />
+                        <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" clip-rule="evenodd" />
+                    </svg></button>
+                    
+                </form>

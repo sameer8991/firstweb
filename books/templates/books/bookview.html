@@ -1,0 +1,75 @@
+{% extends 'books/base.html' %}
+{% block title %}productview {% endblock%}
+{% block style %}
+.product-title, .product-description, .price, .vote, .sizes {
+margin-bottom: 15px; }
+.col-6 {
+-ms-flex: 0 0 50%;
+flex: 0 0 50%;
+max-width: 46%;
+}
+{% endblock %}
+{% block body %}
+<div class="container bg bg-white">
+    <div class="container-fliud">
+        <div class="wrapper row">
+            <div class="preview col-6">
+                <div class="preview-pic tab-content">
+                    <div class="tab-pane active  my-auto mx-auto" id="pic-1"><img src="{{ book.image.url }}" height="500" width="400" />
+                    </div>
+                </div>
+            </div>
+            <div class="details col-6">
+                <h3>Name: {{ book.book_name }}</h3>
+                <p>Author:<strong>{{ book.author }}</strong></p>
+                <p>Summary:<strong> {{ book.summary }}</strong></p>
+       
+                <div style="margin-left:20px;margin-top:20px">
+                 <a href="/media/{{i.pdf}}" target="pdf" class="btn btn-primary" download>pdf</a>
+                 </div>
+      
+            </div>
+            {% if rr %}
+            <a href="{% url 'rating_update' pk=rr.id %}">Give review about book</a>
+            {% endif %}
+            <div class="card">
+                {% if reviews %}
+                {% for r in reviews %}
+                {% if r.review is not "none" %}
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img src="{{ r.student.pic.url }}" class="rounded-circle img-fluid" />
+                        </div>
+                        <div class="col-md-10">
+                            <p>
+                                <a class="float-left" href="{% url 'student_detail' pk=r.student.id %} "><strong>{{ r.student.name }}</strong></a>
+                                <div id="{{ r.id }}">
+                                </div>
+                            </p>
+                            <div class="clearfix"></div>
+                            <p>{{ r.review }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+                {% else %}
+                No reviews yet
+                {% endif %}
+            </div>
+            {% endblock %}
+            {% block javascript %}
+            var i=0;
+            var a;
+            {% for r in reviews %}
+            a=document.getElementById("{{ r.id }}");
+            i=0;
+            if (parseFloat({{ r.rating }})>parseInt({{ r.rating }}))
+            {
+            a.innerHTML = a.innerHTML+ "<span class='float-right'><i class='text-warning fa fa-star-half-o'></i></span>";
+            }
+            for (i = 0; i < parseInt({{ r.rating }}); i++) { a.innerHTML=a.innerHTML+"<span class='float-right'><i class='text-warning fa fa-star'></i></span>";
+                }
+                {% endfor %}
+                {% endblock %}

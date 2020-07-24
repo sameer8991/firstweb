@@ -1,0 +1,261 @@
+  <div class="col-xs-3 col-sm-3 col-md-3 mt-1 col-md-2">
+                        <div class="card" style="width: 12rem;">
+                            <img src='/media/{{i.image}}' class="card-img-top" alt="..." style="width: 188px; height: 204">
+                            <div class="card-body">
+                                <span>
+                                    <h5 class="card-title">{{i.book_name}}</h5>
+                                </span>
+                                <p class="card-text">{{i.author}}</p>
+                                <a href="#" class="btn btn-primary">Read Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+.col-md-3
+{
+display: inline-block;
+margin-left:-4px;
+}
+.carousel-indicators .active {
+background-color: blue;
+}
+.col-md-3 img{
+width: 170px;
+height: 200px;
+}
+
+
+
+<section>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" style="height: 21rem">
+            <div class="carousel-item active">
+                <svg class="bd-placeholder-img" width="100%" height="90%" xmlns="http://www.w3.org/2000/" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                    <rect width="100%" height="80%" fill="#777" /><img src="{% static 'images/bg.jpeg' %}"></svg>
+                <div class="container">
+                    <div class="carousel-caption text-left">
+                        <h1>Example headline.</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                    <rect width="100%" height="100%" fill="#777" /><img src="{% static 'images/bg2.jpeg' %}"></svg>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h2> reaader lives a thousand lives before dies...The man who never reads lievs only one.</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+
+
+
+
+
+
+
+{% extends 'books/base.html' %}
+{% block css %}
+.container {
+max-width: 1226px;
+}
+.carousel {
+margin-bottom: 4rem;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+bottom: 3rem;
+z-index: 10;
+}
+/* Declare heights because of positioning of img element */
+.carousel-item {
+height: 32rem;
+}
+.carousel-item > img {
+position: absolute;
+top: 0;
+left: 0;
+min-width: 100%;
+height: 12rem;
+height: 22rem;
+}
+.col-md-3 {
+display: inline-block;
+margin-left: -4px;
+max-width:20%
+}
+.carousel-indicators .active {
+background-color: blue;
+}
+body .carousel-indicator li {
+background-color: blue;
+}
+body .carousel-indicators {
+bottom:78px ;
+}
+body .carousel-control-prev-icon,
+body .carousel-control-next-icon {
+background-color: blue;
+border-radius: 27px;
+}
+.carousel-control-prev,
+.carousel-control-next {
+top: auto;
+bottom: auto;
+padding-top: 215px;
+}
+body .no-padding {
+padding-left: 0,
+padding-right: 1px;
+padding-bottom: 30px;
+}
+.heading h4 {
+font-size: 18px;
+padding-right: 80px;
+padding-bottom: 3px;
+}
+.h2, h2 {
+font-size: 2rem;
+padding-bottom: 196px;
+}
+body{
+backgroun-color:#ccece7;
+}
+}
+.h4, h4{
+font-size: 1.5rem;
+padding-top: 23px;
+font-style: oblique;
+margin-left: 351px;
+}
+<!--- -->
+.card * {
+box-sizing: border-box;
+}
+.card body {
+background: #d8ddf3;
+padding: 40px;
+display: -webkit-box;
+display: flex;
+justify-content: center;
+font-family: "Noto Sana";
+min-height: 100vh;
+-webkit-box-orient :vertical;
+-webkit-box-direction:normal;
+flex-direction: column;
+-webkit-box-align:center;
+align-items: center;
+-webkit-box-pack: center;
+justify-content: center;
+min-height: 100vh
+}
+.card {
+text-decoration: none;
+color: black;
+max-width: 300px;
+width: 100%;
+background: white;
+position: relative;
+border-radius: 10px;
+box-shadow: 0 1px 3px rgba(44, 46, 65, 0.15);
+-webkit-transition: all 0.3s ease-in-out;
+transition: all 0.3s ease-in-out;
+}
+.card header ,img{
+padding-bottom: 4%;
+position: relative;
+border-radius: 10px;
+overflow: hidden;
+background-image: url(img.jpg);
+background-size: cover;
+background-position: center;
+}
+.card .content {
+left: 0;
+width: 100%;
+background: #fff;
+border-radius: 10px;
+padding: 30px 30px 30px;
+position: relative;
+transition: all 0.3s ease-in-out;
+margin-top: -20px;
+-webkit-transition: all 0.3s ease-in-out;
+}
+.card .content> * {
+margin-bottom: 20px;
+}
+.card .content> *:last-child {
+margin-bottom: 0;
+}
+.card .content h3 {
+font-size: 1.6rem;
+font-weight: bold;
+margin-bottom: 15px;
+}
+.card:hover {
+box-shadow: 0 4px 15px rgba(44,46, 65, 0.15);
+}
+.card:hover .content {
+-webkit-transform: translateY(-50%);
+transform: translateY(-50%);
+}
+{% endblock %}
+{% block body %}
+{% load static %}
+
+<section class="container">
+    <!--Slideshow starts here -->
+    {% for book, range, nSlides in allbooks %}
+    <div class="row">
+        <div id="demo{{forloop.counter}}" class="col carousel slide my-3" data-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data-target="#demo{{forloop.counter}}" data-slide-to="0" class="active"></li>
+                {% for i in range %}
+                <li data-target="#demo{{forloop.parentloop.counter}}" data-slide-to="{{i}}"></li>
+                {% endfor %}
+            </ul>
+            <div class="container carousel-inner no-padding">
+                <div class="carousel-item active">
+                    {% for i in book %}
+                    <div class="col-md-3">
+                        <a class="card">
+                            <header><img src='/media/{{i.image}}' style="width: 300px; height: 225" /></header>
+                            <div class="content">
+                                <h3>{{i.book_name}}</h3>
+                                <p>{{i.author}}</p>
+                                <p><a href="/books/products/{{i.id}}"><button id="rv{{i.id}}" class="btn btn-primary cart">
+                                        review view</button></a></p>
+                                <a href="/media/{{i.pdf}}" target="pdf" class="btn btn-primary" download>pdf</a>
+                            </div>
+                        </a>
+                    </div>
+                    {% if forloop.counter|divisibleby:4 and forloop.counter > 0 and not forloop.last %}
+                </div>
+                <div class="carousel-item">
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!-- left and right controls for the slide -->
+        <a class="carousel-control-prev" href="#demo{{forloop.counter}}" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo{{forloop.counter}}" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+    {% endfor %}
+</section>
+{% endblock %}
+{% block js %}
+{% endblock %}
